@@ -11,8 +11,16 @@
  * - genre: "Programming"
  */
 function createBook(title, author, publishedYear, genre) {
-  // write your code here...
+  let book= {
+    title:title ,
+    author: author,
+    publishedYear:publishedYear ,
+    genre: genre
+  };
+  return book;
 }
+  // write your code here...
+
 
 // DO NOT CHANGE THE LINE OF CODE BELOW (you can use it for testing your code)
 const book = createBook();
@@ -26,7 +34,9 @@ const book = createBook();
  * Access the book title using dot-notation, and access the publish year using bracket-notation.
  */
 function printBookTitleAndYear(book) {
-  // write your code here...
+    return book.title + " " + book["publishedYear"];
+    // return `${book.title} ${book["publishedYear"]}`
+  
 }
 
 /**
@@ -37,7 +47,8 @@ function printBookTitleAndYear(book) {
  * - returns the book object with a new `pageCount` property
  */
 function addPageCount(book, pageCount) {
-  // write your code here...
+  book.pageCount = pageCount;
+  return book;
 }
 
 /**
@@ -49,7 +60,8 @@ function addPageCount(book, pageCount) {
  * - returns the book object with a new `ISBN` property
  */
 function addISBN(book, ISBN) {
-  // write your code here...
+  book.ISBN = ISBN;
+  return book;
 }
 
 /**
@@ -61,7 +73,8 @@ function addISBN(book, ISBN) {
  * - returns the book object with the `publishedYear` updates
  */
 function updatePublishedYear(book, newYear) {
-  // write your code here...
+  book.publishedYear = newYear;
+  return book;
 }
 
 /**
@@ -73,8 +86,9 @@ function updatePublishedYear(book, newYear) {
  * - returns the book object with the `author` property changed to an array with BOTH authors
  */
 function addSecondAuthor(book, additionalAuthor) {
-  // write your code here...
-}
+  book.author=[book.author,additionalAuthor];
+  return book;
+};
 
 /**
  * 🌶️🌶️🌶️ addReview
@@ -99,5 +113,5 @@ module.exports = {
   addISBN,
   updatePublishedYear,
   addSecondAuthor,
-  addReview,
+  //addReview,
 };
